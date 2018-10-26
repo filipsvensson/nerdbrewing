@@ -5,11 +5,17 @@
 }
 
 .recipie-grid {
-  width: 100%;
+  /* width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(16rem,1fr));
-  grid-gap: 1rem;
+  grid-gap: 1rem; */
 }
+
+.embedPostFull:first-child {
+  display: none;
+}
+
+.taggbox-container {}
 
 .recipie-grid-item {
   border: 1px solid #eee;

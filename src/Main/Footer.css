@@ -1,0 +1,28 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer .about {
+  flex: 0 1 15rem;
+}
+
+.footer .contact {
+  display: flex;
+  flex-direction: column;
+}
+.footer .social {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 0.5rem;
+}
+
+.footer .logo {
+  height: 15rem;
+  align-self: center;
+}
+
+.footer .social-logo {
+  height: 1.5rem;
+  margin: 0;
+}
