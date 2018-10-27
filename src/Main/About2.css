@@ -1,6 +1,7 @@
 .about {
   display: flex;
   padding: 0 4rem;
+  margin: 4rem 0;
 }
 
 .left-column {
