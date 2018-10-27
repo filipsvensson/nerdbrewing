@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import textLogo from './nerdbrewing_text_logo.svg';
-import year from './year2.svg';
+import textLogo from './nerdbrewing-text-logo.svg';
+import year from './nerdbrewing-year.svg';
 
 import './Header.css'
 

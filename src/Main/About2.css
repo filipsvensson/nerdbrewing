@@ -1,0 +1,27 @@
+.about {
+  display: flex;
+  padding: 0 4rem;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 2rem;
+  flex: 0 0 auto;
+}
+
+.left-column .logo {
+  width: 14rem;
+}
+
+.right-column {
+  border-left: 2px solid #7a8473;
+  text-align: left;
+  margin: 2rem 0;
+  padding: 0 2rem;
+}
+
+.left-colmun-heading {
+  text-transform: uppercase;
+}

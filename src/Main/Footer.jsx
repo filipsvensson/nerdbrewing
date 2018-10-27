@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import logo from './nerdbrewing_logo_black.svg';
 import instagramLogo from './instagram.svg';
 import facebookLogo from './facebook.svg';
 
@@ -29,6 +28,5 @@ class Footer extends Component {
     );
   }
 }
-// <img className="logo" src={logo} alt="" />
 
 export default Footer;

@@ -1,0 +1,24 @@
+.rotating-logo {
+  position: relative;
+  width: 14rem;
+  height: 14rem;
+}
+
+.outer-logo,
+.inner-logo {
+  width: 14rem;
+  height: 14rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.rotating-logo:hover .outer-logo {
+  animation:spin 24s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform:rotate(360deg);
+  }
+}
