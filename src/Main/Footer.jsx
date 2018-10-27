@@ -9,7 +9,6 @@ class Footer extends Component {
   render() {
     return (
       <footer className="footer">
-        <img className="logo" src={logo} alt="" />
           <div className="about">
             <h3>About</h3>
             <p>
@@ -30,5 +29,6 @@ class Footer extends Component {
     );
   }
 }
+// <img className="logo" src={logo} alt="" />
 
 export default Footer;

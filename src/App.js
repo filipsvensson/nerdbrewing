@@ -1,16 +1,17 @@
 import React, { Component } from "react";
 import Typography from 'typography'
 import { TypographyStyle, GoogleFont } from 'react-typography'
-import themeOceanBeachTheme from 'typography-theme-ocean-beach'
+// import themeOceanBeachTheme from 'typography-theme-ocean-beach'
+import themeSutroTheme from 'typography-theme-sutro'
 import "./App.css";
 // import RecipeList from "./RecipeList/RecipeList";
 import Header from "./Main/Header";
 import InstagramFeed from "./Main/InstagramFeed";
-// import About from "./Main/About";
-import Footer from "./Main/Footer";
+import About from "./Main/About";
+import Footer2 from "./Main/Footer2";
 import UnderConstruction from "./UnderConstruction";
 
-const typography = new Typography(themeOceanBeachTheme)
+const typography = new Typography(themeSutroTheme)
 
 const UNDER_CUNSTRUCTON = false;
 
@@ -29,7 +30,8 @@ class App extends Component {
           <GoogleFont typography={typography} />
           <Header />
           <InstagramFeed />
-          <Footer />
+          <About />
+          <Footer2 />
         </div>
       );
     }

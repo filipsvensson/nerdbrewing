@@ -1,0 +1,36 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #252422;
+  padding: 3rem;
+}
+
+.footer .footer-heading {
+  color: #7a8473;
+  margin: 0;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.footer .social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .social svg:nth-child(even) {
+  margin-left: 0.5rem
+}
+
+.footer .social svg:nth-child(odd) {
+  margin-right: 0.5rem
+}
+
+.footer .social svg {
+  fill: rgb(161, 157, 151);
+}
+
+.footer .social svg:hover {
+  opacity: 0.8
+}

@@ -1,6 +1,29 @@
 .about {
-  /* max-width: 38rem;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto; */
+  display: flex;
+margin-bottom: 4rem;
+}
+
+.left-column {
+  /* border: 1px solid #eee; */
+  /* border-bottom-right-radius: 6px; */
+  /* border-top-right-radius: 6px; */
+  margin-bottom: 4rem;
+  /* width: 60%; */
+  flex: 2 1 auto;
+  padding: 0 2rem;
+  background: #7a8473;
+  color: #f1efe8;
+  margin-top: 4rem;
+  margin-right: -10rem;
+  z-index: 1;
+}
+
+.right-column {
+  flex: 1 1 70%;
+    background: #f1efe8;
+}
+
+.left-colmun-heading {
+  color: #252422;
+      text-transform: uppercase;
 }

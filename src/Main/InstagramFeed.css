@@ -1,3 +1,9 @@
 .instagram-feed {
-  min-height: 17rem;
+  /* min-height: 16.7rem; */
+  margin-top: -4rem;
+  padding: 0 4rem;
+}
+
+.taggbox-socialwall {
+  /* height: 16.7rem; */
 }

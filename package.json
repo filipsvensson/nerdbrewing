@@ -9,7 +9,8 @@
     "react-scripts": "2.0.5",
     "react-typography": "^0.16.13",
     "typography": "^0.16.17",
-    "typography-theme-ocean-beach": "^0.15.11"
+    "typography-theme-ocean-beach": "^0.15.11",
+    "typography-theme-sutro": "^0.15.10"
   },
   "scripts": {
     "start": "react-scripts start",

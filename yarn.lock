@@ -9147,6 +9147,14 @@ typography-theme-ocean-beach@^0.15.11:
     gray-percentage "^2.0.0"
     typography-breakpoint-constants "^0.15.10"
 
+typography-theme-sutro@^0.15.10:
+  version "0.15.10"
+  resolved "https://registry.yarnpkg.com/typography-theme-sutro/-/typography-theme-sutro-0.15.10.tgz#ee8435dba81cf076a8fc9e2106f7e500585ead2c"
+  integrity sha1-7oQ126gc8Hao/J4hBvflAFherSw=
+  dependencies:
+    gray-percentage "^2.0.0"
+    typography-breakpoint-constants "^0.15.10"
+
 typography@^0.16.17:
   version "0.16.17"
   resolved "https://registry.yarnpkg.com/typography/-/typography-0.16.17.tgz#e166eda9b533d51c115e2b38becdb5cedd0a30e4"
