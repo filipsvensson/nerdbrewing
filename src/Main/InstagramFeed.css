@@ -1,5 +1,6 @@
 .instagram-feed {
   margin-top: -4.5rem;
-  padding: 0 4rem;
-  min-height: 20rem
+  min-height: 20rem;
+  margin-right: -0.7rem;
+  margin-left: -0.7rem;
 }

@@ -1,12 +1,66 @@
 .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   background: #fff;
   z-index: 1;
-  margin-top: 4rem;
-  padding: 0 4rem;
 }
 
-.header .text-logo {
+.header .logo {
+  padding: 1rem;
+}
+
+.header .header-logo,
+.navigation {
   width: 100%;
-  max-width: 70rem;
+}
+
+.header-logo-year {
+  margin-top: 0.4rem;
+}
+
+.navigation hr {
+  width: 100%;
+  height: 1px;
+  background: #252422;
+}
+
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  font-weight: 600;
+}
+
+.site-links {
+  padding: 0 0.2rem;
+}
+
+.site-links span {
+  padding: 0 0.3rem;
+}
+
+.social-logo {
+  margin-left: 0.6rem;
+}
+
+@media (min-width: 40rem) {
+  .header .logo {
+    padding: 4rem;
+  }
+  .header .logo img {
+    max-width: 35rem;
+  }
+}
+
+
+@media (min-width: 60rem) {
+  .header .logo {
+    padding: 8rem;
+  }
 }

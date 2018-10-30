@@ -6,12 +6,7 @@
     "graphql-request": "^1.8.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-scripts": "2.0.5",
-    "react-typography": "^0.16.13",
-    "typography": "^0.16.17",
-    "typography-theme-github": "^0.15.10",
-    "typography-theme-ocean-beach": "^0.15.11",
-    "typography-theme-sutro": "^0.15.10"
+    "react-scripts": "2.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
