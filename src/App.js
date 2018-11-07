@@ -1,9 +1,9 @@
 import 'normalize.css';
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import "./App.css";
-import Header from "./Main/Header";
-import InstagramFeed from "./Main/InstagramFeed";
-import About from "./Main/About";
+import Main from "./Main/Main";
+import Contact from "./Contact/Contact"
 import UnderConstruction from "./UnderConstruction";
 
 
@@ -19,11 +19,12 @@ class App extends Component {
       );
     } else {
       return (
-        <div className="App">
-          <Header />
-          <InstagramFeed />
-          <About />
-        </div>
+        <Router>
+          <div className="App">
+            <Route path="/" exact component={Main} />
+            <Route path="/contact" component={Contact} />
+          </div>
+        </Router>
       );
     }
   }

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import textLogo from './nerdbrewing-text-logo.svg';
 import year from './nerdbrewing-year.svg';
-import instagramLogo from './instagram.svg';
-import facebookLogo from './facebook.svg';
+import instagramLogo from '../icons/instagram.svg';
+import facebookLogo from '../icons/facebook.svg';
 
 import './Header.css'
 
@@ -17,16 +17,15 @@ class Header extends Component {
         <div className="navigation">
           <div className="links">
             <div className="site-links">
-              <a>about</a>
+              <a href="#about">About</a>
               <span>/</span>
-              <a>contact</a>
+              <a href="/contact">Contact</a>
             </div>
             <div className="social-links">
               <img className="social-logo" src={instagramLogo} alt="" />
               <img className="social-logo" src={facebookLogo} alt="" />
             </div>
           </div>
-          <hr />
         </div>
       </header>
     );

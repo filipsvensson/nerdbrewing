@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import logo from './nerdbrewing-logo.svg';
 import RotatingLogo from '../RotatingLogo/RotatingLogo';
 
 import './About.css'
@@ -6,12 +7,15 @@ import './About.css'
 class About extends Component {
   render() {
     return (
-      <div className="about">
+      <div id="about" className="about">
         <div className="left-column">
           <RotatingLogo />
         </div>
         <div className="right-column">
-          <h3 className="left-colmun-heading">About</h3>
+          <div className="icon-heading">
+            <img className="about-small-logo" src={logo} alt="" />
+            <h3 className="heading">About</h3>
+          </div>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue justo, pellentesque sit amet enim at, egestas vehicula ex.
             metus, quis elementum erat. Mauris tincidunt ut elit at fringilla. Ut consectetur justo ac sagittis lobortis. Fusce semper dolor justo, nec fermentum lacus posuere quis.
