@@ -24,7 +24,7 @@ class Contact extends Component {
           <div>nerdbrewing@mail.com</div>
           <div>Nordbersgatan 24</div>
           <div>214 50 Malmö</div>
-          <div className="social-links">
+          <div className="social-links-contact">
             <img className="social-logo" src={instagramLogo} alt="" />
             <img className="social-logo" src={facebookLogo} alt="" />
           </div>
