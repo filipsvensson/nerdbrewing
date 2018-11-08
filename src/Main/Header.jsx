@@ -22,7 +22,9 @@ class Header extends Component {
               <a href="/contact">Contact</a>
             </div>
             <div className="social-links">
-              <img className="social-logo" src={instagramLogo} alt="" />
+              <a href="https://www.instagram.com/nerdbrewing/">
+                <img className="social-logo" src={instagramLogo} alt="" />
+              </a>
               <img className="social-logo" src={facebookLogo} alt="" />
             </div>
           </div>

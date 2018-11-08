@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
 import backIcon from './arrow_back-24px.svg';
 import instagramLogo from '../icons/instagram.svg';
 import facebookLogo from '../icons/facebook.svg';
@@ -25,7 +24,9 @@ class Contact extends Component {
           <div>Nordbersgatan 24</div>
           <div>214 50 Malmö</div>
           <div className="social-links-contact">
-            <img className="social-logo" src={instagramLogo} alt="" />
+            <a href="https://www.instagram.com/nerdbrewing/">
+              <img className="social-logo" src={instagramLogo} alt="" />
+            </a>
             <img className="social-logo" src={facebookLogo} alt="" />
           </div>
         </div>
