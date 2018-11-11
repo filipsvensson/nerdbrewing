@@ -11,25 +11,38 @@ const ImageModel = mongoose.model('Image', ImageSchema);
 
 /* export our lambda function as named "handler" export */
 exports.handler = (event, context, callback) => {
+  console.log(chalk.green('Function `images-get-all` invoked'))
+
   if(!process.env.MONGODB_URI) {
     console.log(chalk.yellow('Required MONGODB_URI enviroment variable not found.'))
   }
 
   /* Set up mongoose connection */
-  mongoose.connect(process.env.MONGODB_URI);
+  mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
   mongoose.Promise = global.Promise;
   let db = mongoose.connection;
   db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-  /* parse the string body into a useable JS object */
-  ImageModel.find({}).sort('-date').limit(10).exec(function (err, images) {
-    if (err) {
-        console.log(err);
+  mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }).then(
+    () => {
+      console.log(chalk.green('connection success'))
+      ImageModel.find({}).sort('-date').limit(10).exec(function (err, images) {
+        if (err) {
+            console.log(err);
+        }
+        /* Success! return the response with statusCode 200 */
+        return callback(null, {
+          statusCode: 200,
+          body: JSON.stringify(images)
+        })
+      })
+    },
+    err => {
+     /** handle initial connection error */
+     console.log(chalk.red('connection error'), err)
     }
-    /* Success! return the response with statusCode 200 */
-    return callback(null, {
-      statusCode: 200,
-      body: JSON.stringify(images)
-    })
-  })
+);
+
+
+
 }
