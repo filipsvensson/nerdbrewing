@@ -3,12 +3,14 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 const ImageSchema = new Schema({
-    image: {type: String},
+  image: {
+    type: String
+  },
 });
 const ImageModel = mongoose.model('Image', ImageSchema);
 
 
-exports.handler = async (event, context, callback) => {
+exports.handler = async (event, context) => {
   console.log(chalk.green('Function `images-create` invoked'));
 
   if(!process.env.MONGODB_URI) {
@@ -27,11 +29,13 @@ exports.handler = async (event, context, callback) => {
   try {
     const image = new ImageModel(JSON.parse(event.body));
     const newImage = await image.save();
+    console.log(chalk.green('image created', newImage));
     return {
       statusCode: 200,
       body: JSON.stringify(newImage)
     };
   } catch (err) {
+    console.log(chalk.red('mongoose error'), err)
     return {
       statusCode: 500,
       body: JSON.stringify(err)
