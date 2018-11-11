@@ -12,6 +12,7 @@ const ImageModel = mongoose.model('Image', ImageSchema);
 /* export our lambda function as named "handler" export */
 exports.handler = (event, context, callback) => {
   console.log(chalk.green('Function `images-get-all` invoked'))
+  console.log('process.env.MONGODB_URI', process.env.MONGODB_URI);
 
   if(!process.env.MONGODB_URI) {
     console.log(chalk.yellow('Required MONGODB_URI enviroment variable not found.'))
