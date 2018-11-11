@@ -19,6 +19,10 @@ exports.handler = async (event, context, callback) => {
   if(!process.env.MONGODB_URI) {
     console.log(chalk.yellow('Required MONGODB_URI enviroment variable not found.'))
   }
+  callback(null, {
+    statusCode: 200,
+    body: JSON.stringify([])
+  })
   await mongoose.connect(process.env.MONGODB_URI).catch((err) => {
     console.log(chalk.red('mongoose error'), err)
     return callback(null, {
