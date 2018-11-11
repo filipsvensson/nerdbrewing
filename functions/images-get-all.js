@@ -29,8 +29,13 @@ exports.handler = (event, context, callback) => {
       console.log(chalk.green('connection success'))
       ImageModel.find({}).sort('-date').limit(10).exec(function (err, images) {
         if (err) {
-            console.log(err);
+            console.log(chalk.red('mongoose error'), err)
+            return callback(null, {
+              statusCode: 500,
+              body: JSON.stringify(err)
+            })
         }
+        console.log(chalk.green('mongoose Success'), images)
         /* Success! return the response with statusCode 200 */
         return callback(null, {
           statusCode: 200,
