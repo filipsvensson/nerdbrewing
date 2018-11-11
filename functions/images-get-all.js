@@ -2,15 +2,17 @@ const chalk = require('chalk');
 const mongoose = require('mongoose');
 
 
-const Schema = mongoose.Schema;
-const ImageSchema = new Schema({
-    image: {type: String},
-});
-const ImageModel = mongoose.model('Image', ImageSchema);
+
 
 
 /* export our lambda function as named "handler" export */
 exports.handler = (event, context, callback) => {
+  const Schema = mongoose.Schema;
+  const ImageSchema = new Schema({
+      image: {type: String},
+  });
+  const ImageModel = mongoose.model('Image', ImageSchema);
+  
   console.log(chalk.green('Function `images-get-all` invoked'))
   console.log('process.env.MONGODB_URI', process.env.MONGODB_URI);
 
