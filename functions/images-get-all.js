@@ -1,8 +1,6 @@
 const chalk = require('chalk');
 const mongoose = require('mongoose');
 
-
-
 const Schema = mongoose.Schema;
 const ImageSchema = new Schema({
   image: {type: String},
@@ -10,10 +8,8 @@ const ImageSchema = new Schema({
 const ImageModel = mongoose.model('Image', ImageSchema);
 
 
-/* export our lambda function as named "handler" export */
 exports.handler = async (event, context) => {
-  console.log(chalk.green('Function `images-get-all` invoked'))
-  console.log('process.env.MONGODB_URI', process.env.MONGODB_URI);
+  console.log(chalk.green('Function `images-get-all` invoked'));
 
   if(!process.env.MONGODB_URI) {
     console.log(chalk.yellow('Required MONGODB_URI enviroment variable not found.'))
@@ -26,7 +22,7 @@ exports.handler = async (event, context) => {
       body: JSON.stringify(err)
     }
   });
-  console.log(chalk.green('mongoose connection success'))
+  console.log(chalk.green('mongoose connection success'));
 
   try {
     const res = await ImageModel.find({}).sort('-date').limit(10).exec();
@@ -37,6 +33,10 @@ exports.handler = async (event, context) => {
       body: JSON.stringify(res)
     }
   } catch (err) {
-    console.log(err);
+    console.log(chalk.red('mongoose error'), err)
+    return {
+      statusCode: 500,
+      body: JSON.stringify(err)
+    }
   }
 }
