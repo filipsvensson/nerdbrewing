@@ -3,54 +3,40 @@ const mongoose = require('mongoose');
 
 
 
+const Schema = mongoose.Schema;
+const ImageSchema = new Schema({
+  image: {type: String},
+});
+const ImageModel = mongoose.model('Image', ImageSchema);
 
 
 /* export our lambda function as named "handler" export */
-exports.handler = (event, context, callback) => {
-  const Schema = mongoose.Schema;
-  const ImageSchema = new Schema({
-      image: {type: String},
-  });
-  const ImageModel = mongoose.model('Image', ImageSchema);
-  
+exports.handler = async (event, context, callback) => {
+
   console.log(chalk.green('Function `images-get-all` invoked'))
   console.log('process.env.MONGODB_URI', process.env.MONGODB_URI);
 
   if(!process.env.MONGODB_URI) {
     console.log(chalk.yellow('Required MONGODB_URI enviroment variable not found.'))
   }
+  await mongoose.connect(process.env.MONGODB_URI).catch((err) => {
+    console.log(chalk.red('mongoose error'), err)
+    return callback(null, {
+      statusCode: 500,
+      body: JSON.stringify(err)
+    })
+  });
+  console.log(chalk.green('mongoose connection success'))
 
-  /* Set up mongoose connection */
-  mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
-  mongoose.Promise = global.Promise;
-  let db = mongoose.connection;
-  db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+  try {
+    const res = await ImageModel.find({}).sort('-date').limit(10).exec();
+    console.log(chalk.green('mongoose success result: '), res)
+    callback(null, {
+      statusCode: 200,
+      body: JSON.stringify(res)
+    })
 
-  mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }).then(
-    () => {
-      console.log(chalk.green('connection success'))
-      ImageModel.find({}).sort('-date').limit(10).exec(function (err, images) {
-        if (err) {
-            console.log(chalk.red('mongoose error'), err)
-            return callback(null, {
-              statusCode: 500,
-              body: JSON.stringify(err)
-            })
-        }
-        console.log(chalk.green('mongoose Success'), images)
-        /* Success! return the response with statusCode 200 */
-        return callback(null, {
-          statusCode: 200,
-          body: JSON.stringify(images)
-        })
-      })
-    },
-    err => {
-     /** handle initial connection error */
-     console.log(chalk.red('connection error'), err)
-    }
-);
-
-
-
+  } catch (err) {
+    console.log(err);
+  }
 }
