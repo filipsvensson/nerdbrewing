@@ -5,7 +5,7 @@ import RotatingLogo from '../RotatingLogo/RotatingLogo';
 import './About.css';
 
 const About = () => (
-  <div id="about" className="about">
+  <section id="about" className="about">
     <div className="left-column">
       <RotatingLogo />
     </div>
@@ -27,7 +27,7 @@ const About = () => (
         elementum erat. Mauris tincidunt ut elit at fringilla. Ut consectetur justo ac sagit.
       </p>
     </div>
-  </div>
+  </section>
 );
 
 export default About;

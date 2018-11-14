@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import './InstagramFeed.css'
+import './InstagramFeed.css';
 
 class InstagramFeed extends Component {
   componentDidMount() {
-    const script = document.createElement("script");
-    script.src = "//7499608.com/app/js/embed.min.js";
+    const script = document.createElement('script');
+    script.src = '//7499608.com/app/js/embed.min.js';
     script.async = true;
     this.tagContainer.appendChild(script);
   }
