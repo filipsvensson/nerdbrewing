@@ -40,6 +40,17 @@
     line-height: 1.3;
   }
 
+  .gallery-item figure .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .gallery-item figure .social-icons img {
+    width: 1.1rem;
+    margin-right: 0.3rem;
+  }
+
   .gallery-item figure:hover .image-caption {
     opacity: 1;
   }
