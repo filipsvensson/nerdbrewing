@@ -21,7 +21,10 @@ exports.handler = async (event, context) => {
     console.log(chalk.red('mongoose error'), err)
     return {
       statusCode: 500,
-      body: JSON.stringify(err)
+      body: JSON.stringify(err),
+      headers: {
+        'Access-Control-Allow-Origin':'*'
+      }
     }
   });
   console.log(chalk.green('mongoose connection success'));
@@ -32,13 +35,19 @@ exports.handler = async (event, context) => {
 
     return {
       statusCode: 200,
-      body: JSON.stringify(res)
+      body: JSON.stringify(res),
+      headers: {
+        'Access-Control-Allow-Origin':'*'
+      }
     }
   } catch (err) {
     console.log(chalk.red('mongoose error'), err)
     return {
       statusCode: 500,
-      body: JSON.stringify(err)
+      body: JSON.stringify(err),
+      headers: {
+        'Access-Control-Allow-Origin':'*'
+      }
     }
   }
 }
