@@ -9,6 +9,10 @@ const ImageSchema = new Schema({
 });
 const ImageModel = mongoose.model('Image', ImageSchema);
 
+const headers = {
+  "Access-Control-Allow-Origin" : "*",
+  "Access-Control-Allow-Headers": "Content-Type"
+};
 
 exports.handler = async (event, context) => {
   console.log(chalk.green('Function `images-get-all` invoked'));
@@ -22,9 +26,7 @@ exports.handler = async (event, context) => {
     return {
       statusCode: 500,
       body: JSON.stringify(err),
-      headers: {
-        'Access-Control-Allow-Origin':'*'
-      }
+      headers
     }
   });
   console.log(chalk.green('mongoose connection success'));
@@ -36,18 +38,14 @@ exports.handler = async (event, context) => {
     return {
       statusCode: 200,
       body: JSON.stringify(res),
-      headers: {
-        'Access-Control-Allow-Origin':'*'
-      }
+      headers
     }
   } catch (err) {
     console.log(chalk.red('mongoose error'), err)
     return {
       statusCode: 500,
       body: JSON.stringify(err),
-      headers: {
-        'Access-Control-Allow-Origin':'*'
-      }
+      headers
     }
   }
 }
