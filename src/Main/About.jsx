@@ -15,16 +15,19 @@ const About = () => (
         <h3 className="heading">About</h3>
       </div>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue justo, pellentesque sit
-        amet enim at, egestas vehicula ex. metus, quis elementum erat. Mauris tincidunt ut elit at
-        fringilla. Ut consectetur justo ac sagittis lobortis. Fusce semper dolor justo, nec
-        fermentum lacus posuere quis.
+        Nerdbrewing was founded as a commercial gypsy-brewery in 2015 by Hannes Gruber and Karin
+        Carlsson. Hannes had for many years before that been a successful home brewer and won quite
+        a few medals at different competitions, for instance the Swedish homebrewing championships.
+        Since then Karin has left the company and Hannes has continued in close cooperation with
+        Lilla Ölfabriken and Chad Beer and the three share a brewery on Norbergsgatan in Malmö with
+        the goal of increasing production and reaching a wider audience.
       </p>
 
       <p>
-        luctus eros malesuada pulvinar. Vestibulum dignissim, nisi ac viverra vehicula, nunc lorem
-        laoreet nibh, eget scelerisque eros urna nec quam. Morbi quis efficitur metus, quis
-        elementum erat. Mauris tincidunt ut elit at fringilla. Ut consectetur justo ac sagit.
+        The name of the brewery itself and the names of the beers all stem from Hannes background in
+        computer science and software development. Since sharing is caring, Nerdbrewing brought open
+        source from the software world into the world of brewing and the recipes are free for any
+        homebrewer to try out!
       </p>
     </div>
   </section>

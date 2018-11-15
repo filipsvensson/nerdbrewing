@@ -1,4 +1,3 @@
-
 .contact-header {
   display: flex;
   justify-content: space-between;
@@ -30,12 +29,21 @@
 .contact-info {
   font-family: 'Raleway', sans-serif;
   text-align: left;
+  font-style: normal;
   font-size: 1.2rem;
   margin-top: 2rem;
 }
 
 .contact-info > * {
   margin-bottom: 0.6rem;
+}
+
+.social-links-contact {
+  margin-top: 1.5rem;
+}
+
+.social-links-contact .social-logo-contact + .social-logo-contact {
+  margin-left: 0.6rem;
 }
 
 @media (min-width: 26.5rem) {
