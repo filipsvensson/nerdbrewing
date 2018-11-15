@@ -1,8 +1,7 @@
 import React from 'react';
 import textLogo from './nerdbrewing-text-logo.svg';
 import year from './nerdbrewing-year.svg';
-import instagramLogo from '../icons/instagram.svg';
-import facebookLogo from '../icons/facebook.svg';
+import SocialLinks from '../SocialLinks/SocialLinks';
 
 import './Header.css';
 
@@ -19,12 +18,7 @@ const Header = () => (
           <span>/</span>
           <a href="/contact">Contact</a>
         </div>
-        <div className="social-links">
-          <a href="https://www.instagram.com/nerdbrewing/">
-            <img className="social-logo" src={instagramLogo} alt="" />
-          </a>
-          <img className="social-logo" src={facebookLogo} alt="" />
-        </div>
+        <SocialLinks />
       </div>
     </div>
   </header>

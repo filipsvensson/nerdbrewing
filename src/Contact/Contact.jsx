@@ -1,7 +1,6 @@
 import React from 'react';
 import backIcon from './arrow_back-24px.svg';
-import instagramLogo from '../icons/instagram.svg';
-import facebookLogo from '../icons/facebook.svg';
+import SocialLinks from '../SocialLinks/SocialLinks';
 
 import './Contact.css';
 
@@ -21,17 +20,7 @@ const Contact = () => (
       <div>Nerdbrewing C/O Lilla Ölfabriken</div>
       <div>Nordbersgatan 24</div>
       <div>214 50 Malmö</div>
-      <div className="social-links-contact">
-        <a className="social-logo-contact" href="https://www.instagram.com/nerdbrewing/">
-          <img src={instagramLogo} alt="" />
-        </a>
-        <a
-          className="social-logo-contact"
-          href="https://www.facebook.com/nerdbrewingopensourcebeer"
-        >
-          <img src={facebookLogo} alt="" />
-        </a>
-      </div>
+      <SocialLinks />
     </div>
   </address>
 );

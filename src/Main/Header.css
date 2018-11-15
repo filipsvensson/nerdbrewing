@@ -35,16 +35,20 @@
   padding: 0 0.2rem;
 }
 
+.site-links a {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.site-links a:hover {
+  opacity: 0.6;
+}
+
 .site-links span {
   padding: 0 0.3rem;
 }
 
-.social-links {
+.links .social-links {
   display: none;
-}
-
-.social-logo {
-  margin-left: 0.6rem;
 }
 
 @media (min-width: 26.5rem) {
@@ -54,7 +58,7 @@
     border-bottom: 2px solid #252422;
   }
 
-  .social-links {
+  .links .social-links {
     display: block;
   }
 }
@@ -67,7 +71,6 @@
     max-width: 35rem;
   }
 }
-
 
 @media (min-width: 60rem) {
   .header .logo {
