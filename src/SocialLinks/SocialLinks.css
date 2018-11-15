@@ -1,0 +1,15 @@
+.social-links:hover a {
+  opacity: 0.6;
+}
+
+.social-links a {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.social-links a:hover {
+  opacity: 1;
+}
+
+.social-logo {
+  margin-left: 0.6rem;
+}
