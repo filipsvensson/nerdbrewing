@@ -1,28 +1,28 @@
-const chalk = require('chalk')
+const chalk = require('chalk');
 const mongoose = require('mongoose');
 
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 const ImageSchema = new Schema({
-  image: {
-    type: String
-  },
+  src: { type: String },
+  created: { type: String },
+  text: { type: String },
+  link: { type: String }
 });
 const ImageModel = mongoose.model('Image', ImageSchema);
 
-
-exports.handler = async (event, context) => {
+exports.handler = async event => {
   console.log(chalk.green('Function `images-create` invoked'));
 
-  if(!process.env.MONGODB_URI) {
-    console.log(chalk.yellow('Required MONGODB_URI enviroment variable not found.'))
+  if (!process.env.MONGODB_URI) {
+    console.log(chalk.yellow('Required MONGODB_URI enviroment variable not found.'));
   }
 
-  await mongoose.connect(process.env.MONGODB_URI).catch((err) => {
-    console.log(chalk.red('mongoose error'), err)
+  await mongoose.connect(process.env.MONGODB_URI).catch(err => {
+    console.log(chalk.red('mongoose error'), err);
     return {
       statusCode: 500,
       body: JSON.stringify(err)
-    }
+    };
   });
   console.log(chalk.green('mongoose connection success'));
 
@@ -35,10 +35,10 @@ exports.handler = async (event, context) => {
       body: JSON.stringify(newImage)
     };
   } catch (err) {
-    console.log(chalk.red('mongoose error'), err)
+    console.log(chalk.red('mongoose error'), err);
     return {
       statusCode: 500,
       body: JSON.stringify(err)
-    }
+    };
   }
-}
+};
