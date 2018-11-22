@@ -1,5 +1,25 @@
 const chalk = require('chalk');
 const mongoose = require('mongoose');
+const dateFns = require('date-fns');
+
+const formateDate = date => {
+  console.log(Date.now(), new Date(date * 1000));
+  const difference = dateFns.differenceInDays(Date.now(), new Date(date * 1000));
+
+  if (difference === 0) {
+    return 'today';
+  }
+
+  if (difference === 1) {
+    return '1 day ago';
+  }
+
+  if (difference < 6) {
+    return `${difference} days ago`;
+  }
+
+  return dateFns.format(new Date(date * 1000), 'D MMMM');
+};
 
 const { Schema } = mongoose;
 const ImageSchema = new Schema({
@@ -40,7 +60,9 @@ exports.handler = async () => {
     console.log(chalk.green('mongoose success result: '), res);
 
     res.sort((a, b) => new Date(b.created * 1000) - new Date(a.created * 1000));
-
+    res.forEach(d => {
+      d.created = formateDate(d.created);
+    });
     return {
       statusCode: 200,
       body: JSON.stringify(res),
