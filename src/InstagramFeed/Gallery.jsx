@@ -51,7 +51,7 @@ class Gallery extends Component {
     if (current === LoadState.LOADING) {
       return (
         <div className="loding-container">
-          <div class="loding-box" />
+          <div className="loding-box" />
         </div>
       );
     }
