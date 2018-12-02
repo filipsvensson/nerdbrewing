@@ -6,6 +6,7 @@
   "parser": "babel-eslint",
   "plugins": ["prettier"],
   "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "prettier/prettier": ["error"]
   },
   "overrides": [{
