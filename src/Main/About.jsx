@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from './nerdbrewing-logo.svg';
-import RotatingLogo from '../RotatingLogo/RotatingLogo';
+import RotatingLogo from '../RotatingLogo';
 
 import './About.css';
 

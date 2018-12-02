@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import Header from './Header';
-import Gallery from '../InstagramFeed/Gallery';
+import Gallery from '../Gallery';
 import About from './About';
 
 const Main = () => (

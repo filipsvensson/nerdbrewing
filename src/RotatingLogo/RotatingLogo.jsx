@@ -1,20 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import InnerLogo from './InnerLogo';
 import OuterLogo from './OuterLogo';
 
-import './RotatingLogo.css'
+import './RotatingLogo.css';
 
-class RotatingLogo extends Component {
-
-  render() {
-    return (
-      <div className="rotating-logo">
-        <InnerLogo/>
-        <OuterLogo/>
-      </div>
-    );
-  }
-
-}
+const RotatingLogo = () => (
+  <div className="rotating-logo">
+    <InnerLogo />
+    <OuterLogo />
+  </div>
+);
 
 export default RotatingLogo;
