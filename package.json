@@ -8,6 +8,7 @@
     "graphql-request": "^1.8.2",
     "mongoose": "^5.3.11",
     "normalize.css": "^8.0.0",
+    "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-router": "^4.3.1",
@@ -20,18 +21,35 @@
     "build": "npm-run-all --parallel build:**",
     "build:app": "react-scripts build",
     "build:functions": "netlify-lambda build functions",
+    "lint": "run-p 'lint:js' 'lint:css'",
+    "lint:js": "eslint  -c .eslintrc --ext=js --ext=jsx --ignore-path .gitignore .",
+    "lint:css": "stylelint --config .stylelintrc --ignore-path .gitignore \"**/*.css\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "lint-staged": {
+    "linters": {
+      "src/**/*.{js,jsx,json}": [
+        "eslint --fix",
+        "prettier --config .prettierrc --write",
+        "git add"
+      ],
+      "src/**/*.css": [
+        "stylelint --config .stylelintrc --fix",
+        "prettier --config .prettierrc --write",
+        "git add"
+      ]
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
+  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"],
   "devDependencies": {
     "eslint-config-airbnb": "17.1.0",
     "eslint-config-prettier": "^3.3.0",
@@ -39,8 +57,13 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.0",
+    "husky": "^1.2.0",
+    "lint-staged": "^8.1.0",
     "netlify-lambda": "0.4.0",
     "npm-run-all": "^4.1.5",
-    "prettier": "^1.15.2"
+    "prettier": "^1.15.2",
+    "stylelint": "^9.9.0",
+    "stylelint-config-prettier": "^4.0.0",
+    "stylelint-config-standard": "^18.2.0"
   }
 }

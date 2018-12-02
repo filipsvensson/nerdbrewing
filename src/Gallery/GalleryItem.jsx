@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import instagramLogo from '../icons/instagram.svg';
 
 const GalleryItem = ({ image: { src, text, created, link } }) => (
@@ -17,5 +18,14 @@ const GalleryItem = ({ image: { src, text, created, link } }) => (
     </figure>
   </div>
 );
+
+GalleryItem.propTypes = {
+  image: PropTypes.shape({
+    src: PropTypes.string.isRequired,
+    text: PropTypes.string,
+    created: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired
+  }).isRequired
+};
 
 export default GalleryItem;

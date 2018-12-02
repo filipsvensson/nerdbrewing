@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const dateFns = require('date-fns');
 
 const formateDate = date => {
-  console.log(Date.now(), new Date(date * 1000));
   const difference = dateFns.differenceInDays(Date.now(), new Date(date * 1000));
 
   if (difference === 0) {
@@ -61,6 +60,7 @@ exports.handler = async () => {
 
     res.sort((a, b) => new Date(b.created * 1000) - new Date(a.created * 1000));
     res.forEach(d => {
+      // eslint-disable-next-line no-param-reassign
       d.created = formateDate(d.created);
     });
     return {

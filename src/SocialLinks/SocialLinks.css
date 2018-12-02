@@ -1,9 +1,9 @@
-.social-links:hover a {
-  opacity: 0.6;
-}
-
 .social-links a {
   transition: opacity 0.2s ease-in-out;
+}
+
+.social-links:hover a {
+  opacity: 0.6;
 }
 
 .social-links a:hover {
