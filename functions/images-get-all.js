@@ -53,7 +53,7 @@ exports.handler = async () => {
 
   try {
     const res = await ImageModel.find({})
-      .sort('-date')
+      .sort({ created: -1 })
       .limit(6)
       .exec();
     console.log(chalk.green('mongoose success result: '), res);
