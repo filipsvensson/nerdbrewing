@@ -41,14 +41,19 @@ exports.handler = async () => {
     console.log(chalk.yellow('Required MONGODB_URI enviroment variable not found.'));
   }
 
-  await mongoose.connect(process.env.MONGODB_URI).catch(err => {
-    console.log(chalk.red('mongoose error'), err);
-    return {
-      statusCode: 500,
-      body: JSON.stringify(err),
-      headers
-    };
-  });
+  await mongoose
+    .connect(
+      process.env.MONGODB_URI,
+      { useNewUrlParser: true }
+    )
+    .catch(err => {
+      console.log(chalk.red('mongoose error'), err);
+      return {
+        statusCode: 500,
+        body: JSON.stringify(err),
+        headers
+      };
+    });
   console.log(chalk.green('mongoose connection success'));
 
   try {
