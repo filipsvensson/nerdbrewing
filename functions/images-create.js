@@ -6,7 +6,8 @@ const ImageSchema = new Schema({
   src: { type: String },
   created: { type: String },
   text: { type: String },
-  link: { type: String }
+  link: { type: String },
+  type: { type: String }
 });
 const ImageModel = mongoose.model('Image', ImageSchema);
 

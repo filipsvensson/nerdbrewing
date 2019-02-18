@@ -25,7 +25,8 @@ const ImageSchema = new Schema({
   src: { type: String },
   created: { type: String },
   text: { type: String },
-  link: { type: String }
+  link: { type: String },
+  type: { type: String }
 });
 const ImageModel = mongoose.model('Image', ImageSchema);
 
@@ -58,6 +59,7 @@ exports.handler = async () => {
 
   try {
     const res = await ImageModel.find({})
+      .nor([{ type: 'video' }, { type: 'carousel' }])
       .sort({ created: -1 })
       .limit(6)
       .exec();
