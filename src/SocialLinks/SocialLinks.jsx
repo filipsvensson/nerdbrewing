@@ -8,13 +8,13 @@ import './SocialLinks.css';
 const SocialLinks = () => (
   <div className="social-links">
     <a href="https://www.instagram.com/nerdbrewing/">
-      <img className="social-logo" src={instagramLogo} alt="" />
+      <img src={instagramLogo} alt="" />
     </a>
     <a href="https://www.facebook.com/nerdbrewingopensourcebeer">
-      <img className="social-logo" src={facebookLogo} alt="" />
+      <img src={facebookLogo} alt="" />
     </a>
     <a href="https://www.twitter.com/nerdbrewing">
-      <img className="social-logo" src={twitterLogo} alt="" />
+      <img src={twitterLogo} alt="" />
     </a>
   </div>
 );

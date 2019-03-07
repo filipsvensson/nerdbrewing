@@ -39,6 +39,10 @@
   transition: opacity 0.2s ease-in-out;
 }
 
+.site-links a:not(:first-child) {
+  margin-left: 1rem;
+}
+
 .site-links a:hover {
   opacity: 0.6;
 }
@@ -67,6 +71,7 @@
   .header .logo {
     padding: 4rem;
   }
+
   .header .logo img {
     max-width: 35rem;
   }
