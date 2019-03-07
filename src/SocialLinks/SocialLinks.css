@@ -10,6 +10,6 @@
   opacity: 1;
 }
 
-.social-logo {
+.social-links a:not(:first-child) {
   margin-left: 0.6rem;
 }
