@@ -1,12 +1,10 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import SocialLinks from '../SocialLinks/SocialLinks';
-import Header from '../Header/Header';
 
 import './Contact.css';
 
 const Contact = () => (
-  <Fragment>
-    <Header />
+  <>
     <address className="contact">
       <div className="contact-info">
         <div>info@nerdbrewing.se</div>
@@ -16,7 +14,7 @@ const Contact = () => (
         <SocialLinks />
       </div>
     </address>
-  </Fragment>
+  </>
 );
 
 export default Contact;
