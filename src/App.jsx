@@ -1,6 +1,7 @@
 import 'normalize.css';
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Header from './Header/Header';
 import './App.css';
 import Main from './Main/Main';
 import Contact from './Contact/Contact';
@@ -8,8 +9,11 @@ import Contact from './Contact/Contact';
 const App = () => (
   <Router>
     <div className="App">
-      <Route path="/" exact component={Main} />
-      <Route path="/contact" component={Contact} />
+      <Header />
+      <Switch>
+        <Route path="/" exact component={Main} />
+        <Route path="/contact" component={Contact} />
+      </Switch>
     </div>
   </Router>
 );
