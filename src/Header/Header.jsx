@@ -1,6 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { withRouter } from 'react-router';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components/macro';
 import textLogo from './nerdbrewing-text-logo.svg';
 import year from './nerdbrewing-year.svg';
@@ -48,7 +47,7 @@ const Navigation = styled.div`
   width: 100%;
 `;
 
-const Links = styled.div`
+const NavItems = styled.div`
   display: flex;
   justify-content: space-between;
   font-family: 'Raleway', sans-serif;
@@ -67,17 +66,25 @@ const Links = styled.div`
 
 const SiteLinks = styled.div`
   padding: 0 0.2rem;
+`;
 
-  a {
-    transition: opacity 0.2s ease-in-out;
+const activeClassName = 'nav-item-active';
+const SiteLink = styled(NavLink).attrs({
+  activeClassName
+})`
+  color: #9c9c9c;
+  transition: color 0.2s ease-in-out;
+
+  :hover {
+    color: #000;
   }
 
-  a:hover {
-    opacity: 0.6;
-  }
-
-  a:not(:first-child) {
+  :not(:first-child) {
     margin-left: 1rem;
+  }
+
+  &.${activeClassName} {
+    color: #000;
   }
 `;
 
@@ -89,32 +96,26 @@ const StyledSocialLinks = styled(SocialLinks)`
   }
 `;
 
-const Header = ({ location: { pathname } }) => (
+const Header = () => (
   <HeaderContainer>
     <Logo>
       <TextLogo src={textLogo} alt="" />
       <YearLogo src={year} alt="" />
     </Logo>
     <Navigation>
-      <Links>
+      <NavItems>
         <SiteLinks>
-          <a href="/" data-active={pathname === '/'}>
+          <SiteLink exact to="/" activeClassName={activeClassName}>
             Home
-          </a>
-          <a href="/contact" data-active={pathname === '/contact'}>
+          </SiteLink>
+          <SiteLink to="/contact" activeClassName={activeClassName}>
             Contact
-          </a>
+          </SiteLink>
         </SiteLinks>
         <StyledSocialLinks />
-      </Links>
+      </NavItems>
     </Navigation>
   </HeaderContainer>
 );
 
-Header.propTypes = {
-  location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired
-  }).isRequired
-};
-
-export default withRouter(Header);
+export default Header;
