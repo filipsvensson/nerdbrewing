@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components/macro';
-import instagramLogo from '../icons/instagram.svg';
-import facebookLogo from '../icons/facebook.svg';
-import twitterLogo from '../icons/twitter.svg';
+import InstagramIcon from '../icons/InstagramIcon';
+import FacebookIcon from '../icons/FacebookIcon';
+import TwitterIcon from '../icons/TwitterIcon';
 
 const SocialLink = styled.a`
   transition: opacity 0.2s ease-in-out;
@@ -26,13 +26,13 @@ const SocialLinksContainer = styled.div`
 const SocialLinks = ({ className }) => (
   <SocialLinksContainer className={className}>
     <SocialLink href="https://www.instagram.com/nerdbrewing/">
-      <img src={instagramLogo} alt="" />
+      <InstagramIcon />
     </SocialLink>
     <SocialLink href="https://www.facebook.com/nerdbrewingopensourcebeer">
-      <img src={facebookLogo} alt="" />
+      <FacebookIcon />
     </SocialLink>
     <SocialLink href="https://www.twitter.com/nerdbrewing">
-      <img src={twitterLogo} alt="" />
+      <TwitterIcon />
     </SocialLink>
   </SocialLinksContainer>
 );

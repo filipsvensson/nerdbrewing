@@ -60,23 +60,19 @@ const NavItems = styled.div`
   @media (min-width: 26.5rem) {
     font-size: 1.2rem;
     letter-spacing: 0.3rem;
-    border-bottom: 2px solid #252422;
+    border-bottom: 2px solid #24292e;
   }
 `;
 
-const SiteLinks = styled.div`
-  padding: 0 0.2rem;
-`;
-
 const activeClassName = 'nav-item-active';
-const SiteLink = styled(NavLink).attrs({
+const NavItem = styled(NavLink).attrs({
   activeClassName
 })`
   color: #9c9c9c;
   transition: color 0.2s ease-in-out;
 
   :hover {
-    color: #000;
+    color: #24292e;
   }
 
   :not(:first-child) {
@@ -84,7 +80,7 @@ const SiteLink = styled(NavLink).attrs({
   }
 
   &.${activeClassName} {
-    color: #000;
+    color: #24292e;
   }
 `;
 
@@ -104,14 +100,14 @@ const Header = () => (
     </Logo>
     <Navigation>
       <NavItems>
-        <SiteLinks>
-          <SiteLink exact to="/" activeClassName={activeClassName}>
+        <div>
+          <NavItem exact to="/" activeClassName={activeClassName}>
             Home
-          </SiteLink>
-          <SiteLink to="/contact" activeClassName={activeClassName}>
+          </NavItem>
+          <NavItem to="/contact" activeClassName={activeClassName}>
             Contact
-          </SiteLink>
-        </SiteLinks>
+          </NavItem>
+        </div>
         <StyledSocialLinks />
       </NavItems>
     </Navigation>
