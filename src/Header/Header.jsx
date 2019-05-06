@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components/macro';
 import textLogo from './nerdbrewing-text-logo.svg';
-import year from './nerdbrewing-year.svg';
 import SocialLinks from '../SocialLinks/SocialLinks';
 
 const HeaderContainer = styled.header`
@@ -34,12 +33,57 @@ const TextLogo = styled.img`
   }
 `;
 
-const YearLogo = styled.img`
-  margin-top: 0.4rem;
+const YearLogo = styled.div`
+  position: relative;
+  display: flex;
+  margin-top: 0.75rem;
+`;
+const Line = styled.div`
+  background-color: #24292e;
   width: 100%;
+  height: 4px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+`;
 
-  @media (min-width: 40rem) {
-    max-width: 35rem;
+const Year = styled.div`
+  font-size: 1.2rem;
+  font-family: 'Source Code Pro', monospace;
+  margin: 0 auto;
+  background-color: #24292e;
+  color: #fff;
+  z-index: 1;
+  padding: 0 1rem;
+  max-width: 25rem;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  min-height: 1.5rem;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 0.75rem solid transparent;
+    border-bottom: 0.75rem solid transparent;
+    border-right: 0.75rem solid #24292e;
+    left: -0.75rem;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 0.75rem solid transparent;
+    border-bottom: 0.75rem solid transparent;
+    border-left: 0.75rem solid #24292e;
+    right: -0.75rem;
   }
 `;
 
@@ -96,7 +140,10 @@ const Header = () => (
   <HeaderContainer>
     <Logo>
       <TextLogo src={textLogo} alt="" />
-      <YearLogo src={year} alt="" />
+      <YearLogo>
+        <Line />
+        <Year>{new Date().getFullYear()}</Year>
+      </YearLogo>
     </Logo>
     <Navigation>
       <NavItems>
