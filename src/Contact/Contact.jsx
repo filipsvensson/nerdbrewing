@@ -8,7 +8,7 @@ const Contact = () => (
     <div className="contact-info">
       <div>info@nerdbrewing.se</div>
       <div>Nerdbrewing C/O Lilla Ölfabriken</div>
-      <div>Nordbersgatan 24</div>
+      <div>Norbergsgatan 24</div>
       <div>214 50 Malmö</div>
       <SocialLinks />
     </div>
