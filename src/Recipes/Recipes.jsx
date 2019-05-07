@@ -8,8 +8,8 @@ import FetchStateHandler from './FetchStateHandler';
 const Recipes = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
-  grid-gap: 4rem;
-  margin-top: 3rem;
+  grid-gap: 3rem;
+  margin: 3rem 0;
 `;
 
 const Recipe = styled.button`
@@ -19,17 +19,20 @@ const Recipe = styled.button`
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
 `;
 
 const RecipeThumbnail = styled.img`
   width: 100%;
+  transition: opacity 0.1s ease-in-out;
+
+  ${Recipe}:focus &,
+  ${Recipe}:hover & {
+    opacity: 0.8;
+  }
 `;
 
 const Title = styled.div`
-  font-family: 'Roboto', sans-serif;
-  text-transform: uppercase;
-  font-size: 1.25rem;
-  text-align: left;
   width: 100%;
   margin-top: 0.5rem;
 `;

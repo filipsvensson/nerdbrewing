@@ -93,15 +93,15 @@ const Navigation = styled.div`
 
 const NavItems = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   font-family: 'Raleway', sans-serif;
   text-transform: uppercase;
-  font-size: 0.9rem;
   letter-spacing: 0.2rem;
   font-weight: 600;
   padding-bottom: 0.2rem;
 
   @media (min-width: 26.5rem) {
+    justify-content: flex-start;
     font-size: 1.2rem;
     letter-spacing: 0.3rem;
     border-bottom: 2px solid #24292e;
@@ -120,18 +120,25 @@ const NavItem = styled(NavLink).attrs({
   }
 
   :not(:first-child) {
-    margin-left: 1rem;
+    margin-left: 1.5rem;
   }
 
   &.${activeClassName} {
     color: #24292e;
   }
+
+  @media (min-width: 26.5rem) {
+    :not(:first-child) {
+      margin-left: 1rem;
+    }
+  }
 `;
 
 const StyledSocialLinks = styled(SocialLinks)`
   display: none;
+  margin-left: auto;
 
-  @media (min-width: 26.5rem) {
+  @media (min-width: 32rem) {
     display: block;
   }
 `;
@@ -147,17 +154,15 @@ const Header = () => (
     </Logo>
     <Navigation>
       <NavItems>
-        <div>
-          <NavItem exact to="/" activeClassName={activeClassName}>
-            Home
-          </NavItem>
-          <NavItem exact to="/recipes" activeClassName={activeClassName}>
-            Recipes
-          </NavItem>
-          <NavItem to="/contact" activeClassName={activeClassName}>
-            Contact
-          </NavItem>
-        </div>
+        <NavItem exact to="/" activeClassName={activeClassName}>
+          Home
+        </NavItem>
+        <NavItem exact to="/recipes" activeClassName={activeClassName}>
+          Recipes
+        </NavItem>
+        <NavItem to="/contact" activeClassName={activeClassName}>
+          Contact
+        </NavItem>
         <StyledSocialLinks />
       </NavItems>
     </Navigation>
