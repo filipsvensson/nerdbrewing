@@ -2,6 +2,10 @@
   font-style: normal;
 }
 
+.contact-form {
+  display: none;
+}
+
 .contact-header {
   display: flex;
   justify-content: space-between;
