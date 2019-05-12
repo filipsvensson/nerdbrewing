@@ -1,10 +1,13 @@
 import React from 'react';
+import ContactForm from './ContactForm';
 import SocialLinks from '../SocialLinks/SocialLinks';
 
 import './Contact.css';
 
 const Contact = () => (
   <address className="contact">
+    <ContactForm />
+
     <div className="contact-info">
       <div>info@nerdbrewing.se</div>
       <div>Nerdbrewing C/O Lilla Ölfabriken</div>
