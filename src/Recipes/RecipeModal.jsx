@@ -21,6 +21,13 @@ const Close = styled(CloseIcon)`
   position: absolute;
   right: 2rem;
   top: 2rem;
+  transition: opacity 0.2s ease-in-out;
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    opacity: 0.6;
+  }
 `;
 
 const Logo = styled.img`
@@ -60,26 +67,35 @@ const Title = styled.div`
   max-width: 25rem;
 `;
 
-const RecipeImg = styled.img`
-  margin-bottom: 2rem;
-  max-width: 14rem;
-`;
 const RecipeContent = styled.div`
   display: flex;
+  flex-direction: column;
+
+  @media (min-width: 32rem) {
+    flex-direction: row;
+  }
 `;
+
 const LeftColumn = styled.div`
-  padding-right: 1rem;
+  @media (min-width: 32rem) {
+    padding-right: 1rem;
+  }
 `;
+
 const RightColumn = styled.div`
-  padding-left: 1rem;
-  max-width: 14rem;
+  @media (min-width: 32rem) {
+    padding-left: 1rem;
+    max-width: 14rem;
+  }
 `;
+
 const About = styled.div`
   background-color: #f5f5f5;
   border-radius: 2px;
   padding: 1rem;
   margin-bottom: 2rem;
 `;
+
 const Ingredients = styled.div`
   background-color: #f5f5f5;
   border-radius: 2px;
@@ -90,14 +106,30 @@ const Ingredient = styled.div`
   margin-bottom: 0.5rem;
   color: #666;
 `;
+
+const RecipeImg = styled.img`
+  display: none;
+  margin-bottom: 2rem;
+  max-width: 12rem;
+
+  @media (min-width: 32rem) {
+    display: block;
+  }
+`;
+
 const InfoList = styled.ul`
   background-color: #f5f5f5;
   border-radius: 2px;
   padding: 1rem;
   margin: 0;
+  margin-top: 2rem;
 
   li:not(:last-child) {
     margin-bottom: 0.5rem;
+  }
+
+  @media (min-width: 32rem) {
+    margin: 0;
   }
 `;
 
