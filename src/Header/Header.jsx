@@ -29,7 +29,7 @@ const TextLogo = styled.img`
   width: 100%;
 
   @media (min-width: 40rem) {
-    max-width: 30rem;
+    max-width: 35rem;
   }
 `;
 
