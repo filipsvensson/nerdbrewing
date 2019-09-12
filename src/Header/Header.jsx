@@ -157,8 +157,8 @@ const Header = () => (
         <NavItem exact to="/" activeClassName={activeClassName}>
           Home
         </NavItem>
-        <NavItem exact to="/recipes" activeClassName={activeClassName}>
-          Recipes
+        <NavItem exact to="/beers" activeClassName={activeClassName}>
+          Beers
         </NavItem>
         <NavItem to="/contact" activeClassName={activeClassName}>
           Contact

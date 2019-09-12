@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components/macro';
+import ReactMarkdown from 'react-markdown';
 import Modal from './Modal';
 import CloseIcon from '../icons/CloseIcon';
 import logo from '../ui/nerdbrewing-logo.svg';
@@ -45,7 +46,7 @@ const TitleBox = styled.div`
   position: relative;
   display: flex;
   margin-top: 3rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 `;
 const Line = styled.div`
   background-color: #24292e;
@@ -90,21 +91,18 @@ const RightColumn = styled.div`
 `;
 
 const About = styled.div`
-  background-color: #f5f5f5;
+  white-space: pre-line;
   border-radius: 2px;
-  padding: 1rem;
-  margin-bottom: 2rem;
+  padding: 0 1rem;
+  margin-bottom: 3rem;
 `;
 
 const Ingredients = styled.div`
-  background-color: #f5f5f5;
+  border: 2px solid;
+  white-space: pre-line;
+  white-space: pre-wrap;
   border-radius: 2px;
   padding: 1rem;
-`;
-
-const Ingredient = styled.div`
-  margin-bottom: 0.5rem;
-  color: #666;
 `;
 
 const RecipeImg = styled.img`
@@ -118,7 +116,7 @@ const RecipeImg = styled.img`
 `;
 
 const InfoList = styled.ul`
-  background-color: #f5f5f5;
+  border: 2px solid;
   border-radius: 2px;
   padding: 1rem;
   margin: 0;
@@ -157,11 +155,11 @@ const RecipeModal = ({
 
         <RecipeContent>
           <LeftColumn>
-            <About>{about}</About>
+            <About>
+              <ReactMarkdown source={about} />
+            </About>
             <Ingredients>
-              {ingredients.map(ingredient => (
-                <Ingredient key={ingredient}>{ingredient}</Ingredient>
-              ))}
+              <ReactMarkdown source={ingredients} />
             </Ingredients>
           </LeftColumn>
           <RightColumn>
