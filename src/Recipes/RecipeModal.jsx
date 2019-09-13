@@ -103,6 +103,20 @@ const Ingredients = styled.div`
   white-space: pre-wrap;
   border-radius: 2px;
   padding: 1rem;
+
+  ul {
+    list-style-type: none;
+    padding-left: 0.5rem;
+  }
+
+  p + ul {
+    margin-top: -1rem;
+  }
+
+  ul > li::before {
+    content: '-';
+    margin-right: 0.5rem;
+  }
 `;
 
 const RecipeImg = styled.img`
