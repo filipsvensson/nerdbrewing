@@ -16,6 +16,10 @@ const Recipe = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+
+  @media (min-width: 32rem) {
+    margin: 1rem;
+  }
 `;
 
 const Close = styled(CloseIcon)`
@@ -66,6 +70,7 @@ const Title = styled.div`
   z-index: 1;
   padding: 0 1rem;
   max-width: 25rem;
+  text-align: center;
 `;
 
 const RecipeContent = styled.div`
@@ -88,13 +93,6 @@ const RightColumn = styled.div`
     padding-left: 1rem;
     max-width: 14rem;
   }
-`;
-
-const About = styled.div`
-  white-space: pre-line;
-  border-radius: 2px;
-  padding: 0 1rem;
-  margin-bottom: 3rem;
 `;
 
 const Ingredients = styled.div`
@@ -155,7 +153,7 @@ const InfoItem = styled.li`
 
 const RecipeModal = ({
   onClose,
-  recipe: { title, about, url, ingredients, abv, ibu, og, size, mashTemp }
+  recipe: { title, url, ingredients, abv, ibu, og, size, mashTemp }
 }) => (
   <Modal disableInitialFocus onClose={() => onClose(false)}>
     {() => (
@@ -169,9 +167,6 @@ const RecipeModal = ({
 
         <RecipeContent>
           <LeftColumn>
-            <About>
-              <ReactMarkdown source={about} />
-            </About>
             <Ingredients>
               <ReactMarkdown source={ingredients} />
             </Ingredients>
@@ -209,7 +204,16 @@ const RecipeModal = ({
 
 RecipeModal.propTypes = {
   onClose: PropTypes.func.isRequired,
-  recipe: PropTypes.shape({}).isRequired
+  recipe: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    ingredients: PropTypes.string.isRequired,
+    abv: PropTypes.string.isRequired,
+    ibu: PropTypes.string.isRequired,
+    og: PropTypes.string.isRequired,
+    size: PropTypes.string.isRequired,
+    mashTemp: PropTypes.string.isRequired
+  }).isRequired
 };
 
 export default RecipeModal;
