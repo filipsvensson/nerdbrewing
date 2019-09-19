@@ -19,7 +19,10 @@ const api = {
   },
 
   async fetchRecipes() {
-    const res = await client.getEntries();
+    const {
+      fields: { recipe: recipes }
+    } = await client.getEntry('2HaNexhXAhj6ktRzTQMdgc');
+
     const formatRecipe = ({ fields }) => {
       const {
         title,
@@ -40,7 +43,7 @@ const api = {
 
       return { title, about, ingredients, url, abv, fg, ibu, mashTemp, og, size };
     };
-    return res.items.map(i => formatRecipe(i));
+    return recipes.map(recipe => formatRecipe(recipe));
   }
 };
 
