@@ -5,6 +5,7 @@ import Header from './Header/Header';
 import './App.css';
 import Main from './Main/Main';
 import Contact from './Contact/Contact';
+import Recipes from './Recipes/Recipes';
 
 const App = () => (
   <Router>
@@ -13,6 +14,7 @@ const App = () => (
       <Switch>
         <Route path="/" exact component={Main} />
         <Route path="/contact" component={Contact} />
+        <Route path="/beers" component={Recipes} />
       </Switch>
     </div>
   </Router>

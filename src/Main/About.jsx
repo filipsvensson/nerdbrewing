@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import logo from './nerdbrewing-logo.svg';
+import logo from '../ui/nerdbrewing-logo.svg';
 import RotatingLogo from '../RotatingLogo';
 
 const AboutSection = styled.section`

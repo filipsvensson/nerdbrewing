@@ -44,15 +44,13 @@ class Gallery extends Component {
     }
 
     return (
-      <div className="container">
-        <div className="gallery">
-          <GalleryItem image={images[0] || {}} />
-          <GalleryItem image={images[1] || {}} />
-          <GalleryItem image={images[2] || {}} />
-          <GalleryItem image={images[3] || {}} />
-          <GalleryItem image={images[4] || {}} />
-          <GalleryItem image={images[5] || {}} />
-        </div>
+      <div className="gallery">
+        <GalleryItem image={images[0] || {}} />
+        <GalleryItem image={images[1] || {}} />
+        <GalleryItem image={images[2] || {}} />
+        <GalleryItem image={images[3] || {}} />
+        <GalleryItem image={images[4] || {}} />
+        <GalleryItem image={images[5] || {}} />
       </div>
     );
   }
