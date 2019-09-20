@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
+import { useAsync } from 'react-async';
 import styled from 'styled-components/macro';
-import usePromise from '../hooks/usePromise';
 import api from '../api/api';
 import RecipeModal from './RecipeModal';
-import FetchStateHandler from './FetchStateHandler';
 
 const Recipes = styled.div`
   display: grid;
@@ -39,11 +38,13 @@ const Title = styled.div`
 `;
 
 const RecipesGrid = () => {
-  const [recipes, recipesState] = usePromise(api.fetchRecipes);
+  const { data: recipes, error, isPending } = useAsync({
+    promiseFn: api.fetchRecipes
+  });
   const [currentRecipe, setCurrentRecipe] = useState(null);
-
+  if (error || isPending) return null;
   return (
-    <FetchStateHandler state={recipesState}>
+    <>
       {currentRecipe && <RecipeModal onClose={setCurrentRecipe} recipe={currentRecipe} />}
       <Recipes>
         {recipes &&
@@ -63,7 +64,7 @@ const RecipesGrid = () => {
             </Recipe>
           ))}
       </Recipes>
-    </FetchStateHandler>
+    </>
   );
 };
 
