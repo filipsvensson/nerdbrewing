@@ -20,6 +20,7 @@ const Recipe = styled.button`
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+  background-color: transparent;
 `;
 
 const RecipeThumbnail = styled.img`
