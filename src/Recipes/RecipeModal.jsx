@@ -153,7 +153,7 @@ const InfoItem = styled.li`
 
 const RecipeModal = ({
   onClose,
-  recipe: { title, url, ingredients, abv, ibu, og, size, mashTemp }
+  recipe: { title, url, ingredients, abv, ibu, og, fg, size, mashTemp }
 }) => (
   <Modal disableInitialFocus onClose={() => onClose(false)}>
     {() => (
@@ -187,6 +187,10 @@ const RecipeModal = ({
                 <span>{og}</span>
               </InfoItem>
               <InfoItem>
+                <span>FG</span>
+                <span>{fg}</span>
+              </InfoItem>
+              <InfoItem>
                 <span>Size</span>
                 <span>{size}</span>
               </InfoItem>
@@ -211,6 +215,7 @@ RecipeModal.propTypes = {
     abv: PropTypes.string.isRequired,
     ibu: PropTypes.string.isRequired,
     og: PropTypes.string.isRequired,
+    fg: PropTypes.string.isRequired,
     size: PropTypes.string.isRequired,
     mashTemp: PropTypes.string.isRequired
   }).isRequired
