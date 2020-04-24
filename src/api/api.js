@@ -10,7 +10,7 @@ const client = contentful.createClient({
 
 const api = {
   async fetchImages() {
-    return fetch('https://zealous-turing-f131ed.netlify.com/.netlify/functions/images-get-all', {
+    return fetch('https://nerdbrewing.se/.netlify/functions/images-get-all', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
