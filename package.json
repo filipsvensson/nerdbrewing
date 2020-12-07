@@ -1,68 +1,61 @@
 {
   "name": "nerdbrewing",
-  "version": "0.1.0",
   "private": true,
+  "description": "Nerdbrewing site",
+  "version": "0.1.0",
+  "author": "Filip Svensson <filip.svensson.dev@gmail.com>",
   "dependencies": {
-    "chalk": "^2.4.1",
-    "contentful": "^7.5.0",
-    "date-fns": "^1.29.0",
-    "focus-trap-react": "^4.0.0",
-    "graphql-request": "^1.8.2",
-    "mongoose": "^5.4.13",
+    "babel-plugin-styled-components": "^1.12.0",
+    "dotenv": "^8.2.0",
+    "focus-trap-react": "^8.3.0",
+    "gatsby": "^2.27.0",
+    "gatsby-image": "^2.4.21",
+    "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-manifest": "^2.4.34",
+    "gatsby-plugin-offline": "^3.2.33",
+    "gatsby-plugin-portal": "^1.0.7",
+    "gatsby-plugin-react-helmet": "^3.3.14",
+    "gatsby-plugin-react-svg": "^3.0.0",
+    "gatsby-plugin-sharp": "^2.6.42",
+    "gatsby-plugin-styled-components": "^3.5.0",
+    "gatsby-source-contentful": "^3.0.6",
+    "gatsby-source-filesystem": "^2.3.34",
+    "gatsby-source-instagram": "^0.9.0",
+    "gatsby-transformer-sharp": "^2.5.17",
     "no-scroll": "^2.1.1",
-    "normalize.css": "^8.0.0",
-    "prop-types": "^15.6.2",
-    "react": "^16.8.6",
-    "react-async": "^8.0.0",
-    "react-dom": "^16.5.2",
-    "react-markdown": "^4.2.2",
-    "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "^2.1.5",
-    "styled-components": "^4.2.0"
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^6.1.0",
+    "react-markdown": "^5.0.3",
+    "styled-components": "^5.2.1"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "start:server": "netlify-lambda serve functions",
-    "build": "react-scripts build",
-    "lint": "lint-staged",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx}": [
-      "pretty-quick --staged",
-      "eslint src/ --fix",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
   "devDependencies": {
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^6.3.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-react": "^7.14.3",
-    "husky": "^3.0.5",
-    "lint-staged": "^9.2.5",
-    "netlify-lambda": "^1.4.2",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^1.18.2",
-    "pretty-quick": "^1.11.1",
-    "stylelint": "^11.0.0"
+    "prettier": "2.1.2"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "0BSD",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "babelMacros": {
+    "styledComponents": {
+      "pure": true
+    }
   }
 }
